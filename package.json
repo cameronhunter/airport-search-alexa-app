@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "name": "airport-code",
+  "license": "UNLICENSED",
+  "version": "0.1.0",
+  "main": "./src/index.js",
+  "scripts": {
+    "build": "alexa-scripts build",
+    "start": "alexa-scripts start",
+    "test": "alexa-scripts test"
+  },
+  "dependencies": {
+    "alexa-annotations": "*",
+    "alexa-response": "*",
+    "ssml-jsx": "*"
+  },
+  "devDependencies": {
+    "alexa-request": "*",
+    "alexa-scripts": "^0.2.4"
+  },
+  "keywords": [
+    "alexa",
+    "alexa-skill",
+    "amazon-echo",
+    "create-alexa-app",
+    "echo"
+  ]
+}
