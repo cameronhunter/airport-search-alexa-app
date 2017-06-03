@@ -41,6 +41,5 @@ const db = {
 };
 
 export default (query) => {
-  console.log('MOCK QUERY:', query);
   return Promise.resolve(db[query] || []);
 };
