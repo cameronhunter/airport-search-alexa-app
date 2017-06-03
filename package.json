@@ -10,8 +10,13 @@
     "test": "alexa-scripts test"
   },
   "dependencies": {
+    "airportsjs": "^0.2.2",
     "alexa-annotations": "*",
     "alexa-response": "*",
+    "dotenv": "^4.0.0",
+    "iatacodes": "^7.0.1",
+    "make-unique": "^1.0.4",
+    "node-fetch": "^1.7.0",
     "ssml-jsx": "*"
   },
   "devDependencies": {

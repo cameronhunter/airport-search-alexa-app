@@ -1,0 +1,51 @@
+{
+  "intents": [
+    { "intent": "AMAZON.YesIntent" },
+    { "intent": "AMAZON.NoIntent" },
+    { "intent": "AMAZON.CancelIntent" },
+    { "intent": "AMAZON.HelpIntent" },
+    { "intent": "AMAZON.StopIntent" },
+    {
+      "intent": "App_Airport",
+      "slots": [
+        { "name": "airport", "type": "AMAZON.Airport" }
+      ]
+    },
+    {
+      "intent": "App_US_CITY",
+      "slots": [
+        { "name": "us_city", "type": "AMAZON.US_CITY" }
+      ]
+    },
+    {
+      "intent": "App_EUROPE_CITY",
+      "slots": [
+        { "name": "europe_city", "type": "AMAZON.EUROPE_CITY" }
+      ]
+    },
+    {
+      "intent": "App_GB_CITY",
+      "slots": [
+        { "name": "gb_city", "type": "AMAZON.GB_CITY" }
+      ]
+    },
+    {
+      "intent": "App_DE_CITY",
+      "slots": [
+        { "name": "de_city", "type": "AMAZON.DE_CITY" }
+      ]
+    },
+    {
+      "intent": "App_COUNTRY",
+      "slots": [
+        { "name": "country", "type": "AMAZON.Country" }
+      ]
+    },
+    {
+      "intent": "App_AT_CITY",
+      "slots": [
+        { "name": "at_city", "type": "AMAZON.AT_CITY" }
+      ]
+    }
+  ]
+}

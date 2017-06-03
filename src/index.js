@@ -1,26 +1,93 @@
 import { Skill, Launch, Intent } from 'alexa-annotations';
-import { say, ask } from 'alexa-response';
+import Response, { say } from 'alexa-response';
+import search from './search';
+import Airport from './airport';
 
 export class App {
 
   @Launch
   launch() {
-    return say('Alexa app launched!');
+    return Response.build({
+      ask: 'Welcome to "Airport Search". Which airport would you like to search for?',
+      reprompt: 'Which airport would you like to search for?'
+    });
   }
 
-  @Intent('hello')
-  hello({ name = 'world' }) {
-    return say(`Hello ${name}`).card({ title: 'Alexa App', content: `Hello ${name}` });
+  @Intent('App_Airport', 'App_US_CITY', 'App_EUROPE_CITY', 'App_GB_CITY', 'App_DE_CITY', 'App_COUNTRY', 'App_AT_CITY', 'Search')
+  search({ airport, us_city, europe_city, gb_city, de_city, country, at_city, query: querySlot }) {
+    const query = (airport || us_city || europe_city || gb_city || de_city || country || at_city || querySlot);
+    return search(query).then((results) => {
+      const count = results.length;
+      switch(count) {
+        case 0: {
+          return Response.build({
+            ask: `I couldn't find any airports for ${query}. Would you like to search for another?`,
+            reprompt: 'Which airport would you like to search for?'
+          });
+        }
+        case 1: {
+          const { name, country_name, code } = results[0];
+          return Response.build({
+            ask: (
+              <speak>
+                <Airport {...results[0]} />
+                <break time='1s' />
+                <s>Would you like to search for another?</s>
+              </speak>
+            ),
+            reprompt: 'Would you like to search for another?',
+            card: {
+              title: `Airport search for ${query}`,
+              content: `The airport code for ${name}, ${country_name} is ${code}`
+            }
+          });
+        }
+        default: {
+          const cardResults = results.map(({ name, country_name, code }) => (`• ${name}, ${country_name}: ${code}`));
+          return Response.build({
+            ask: (
+              <speak>
+                <s>{`I found ${count} results for ${query}`}</s>
+                {results.map((result) => <p><Airport {...result} brief={true} /><break time='0.25s' /></p>)}
+                <break time='1s' />
+                <s>Would you like to search for another?</s>
+              </speak>
+            ),
+            reprompt: 'Would you like to search for another?',
+            card: {
+              title: `Airport search for ${query}`,
+              content: `There were ${count} results for ${query}:\n\n${cardResults.join('\n')}`
+            }
+          });
+        }
+      }
+    }).catch((error) => {
+      console.error(error);
+      return Response.build({
+        say: "I'm having trouble looking up airports at the moment. Please try again later."
+      });
+    });
+  }
+
+  @Intent('AMAZON.YesIntent')
+  yes() {
+    return Response.build({
+      ask: 'Which airport would you like to search for?',
+      reprompt: 'Which airport would you like to search for?'
+    });
   }
 
   @Intent('AMAZON.HelpIntent')
   help() {
-    return ask('I say hello to people. Who should I say hello to?').reprompt('Who should I say hello to?');
+    return Response.build({
+      ask: 'The "Airport Code" skill finds details for airports world wide. Would you like to search for an airport?',
+      reprompt: 'Would you like to search for an airport?'
+    });
   }
 
-  @Intent('AMAZON.CancelIntent', 'AMAZON.StopIntent')
+  @Intent('AMAZON.CancelIntent', 'AMAZON.StopIntent', 'AMAZON.NoIntent')
   stop() {
-    return say(<speak>Goodbye!</speak>);
+    return say('Goodbye!');
   }
 
 }

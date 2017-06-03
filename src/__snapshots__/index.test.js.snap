@@ -1,15 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hello intent 1`] = `
+exports[`Cancel intent 1`] = `
 Object {
   "response": Object {
-    "card": Object {
-      "content": "Hello world",
-      "title": "Alexa App",
-      "type": "Simple",
-    },
     "outputSpeech": Object {
-      "text": "Hello world",
+      "text": "Goodbye!",
       "type": "PlainText",
     },
     "shouldEndSession": true,
@@ -18,14 +13,158 @@ Object {
 }
 `;
 
-exports[`LaunchRequest 1`] = `
+exports[`Help intent 1`] = `
 Object {
   "response": Object {
     "outputSpeech": Object {
-      "text": "Alexa app launched!",
+      "text": "The \\"Airport Code\\" skill finds details for airports world wide. Would you like to search for an airport?",
+      "type": "PlainText",
+    },
+    "reprompt": Object {
+      "outputSpeech": Object {
+        "text": "Would you like to search for an airport?",
+        "type": "PlainText",
+      },
+    },
+    "shouldEndSession": false,
+  },
+  "version": "1.0",
+}
+`;
+
+exports[`Launch intent 1`] = `
+Object {
+  "response": Object {
+    "outputSpeech": Object {
+      "text": "Welcome to \\"Airport Search\\". Which airport would you like to search for?",
+      "type": "PlainText",
+    },
+    "reprompt": Object {
+      "outputSpeech": Object {
+        "text": "Which airport would you like to search for?",
+        "type": "PlainText",
+      },
+    },
+    "shouldEndSession": false,
+  },
+  "version": "1.0",
+}
+`;
+
+exports[`No intent 1`] = `
+Object {
+  "response": Object {
+    "outputSpeech": Object {
+      "text": "Goodbye!",
       "type": "PlainText",
     },
     "shouldEndSession": true,
+  },
+  "version": "1.0",
+}
+`;
+
+exports[`Search intent with multiple results 1`] = `
+Object {
+  "response": Object {
+    "card": Object {
+      "content": "There were 6 results for New York:
+
+• La Guardia, United States: LGA
+• John F Kennedy International, United States: JFK
+• Newark Liberty International, United States: EWR
+• West 30th St Heliport, United States: JRA
+• Downtown Manhattan Heliport, United States: JRB
+• East 60th Street Heliport, United States: JRE",
+      "title": "Airport search for New York",
+      "type": "Simple",
+    },
+    "outputSpeech": Object {
+      "ssml": "<speak><s>I found 6 results for New York</s><p><s>La Guardia, United States: <say-as interpret-as=\\"characters\\">LGA</say-as></s><break time=\\"0.25s\\"/></p><p><s>John F Kennedy International, United States: <say-as interpret-as=\\"characters\\">JFK</say-as></s><break time=\\"0.25s\\"/></p><p><s>Newark Liberty International, United States: <say-as interpret-as=\\"characters\\">EWR</say-as></s><break time=\\"0.25s\\"/></p><p><s>West 30th St Heliport, United States: <say-as interpret-as=\\"characters\\">JRA</say-as></s><break time=\\"0.25s\\"/></p><p><s>Downtown Manhattan Heliport, United States: <say-as interpret-as=\\"characters\\">JRB</say-as></s><break time=\\"0.25s\\"/></p><p><s>East 60th Street Heliport, United States: <say-as interpret-as=\\"characters\\">JRE</say-as></s><break time=\\"0.25s\\"/></p><break time=\\"1s\\"/><s>Would you like to search for another?</s></speak>",
+      "type": "SSML",
+    },
+    "reprompt": Object {
+      "outputSpeech": Object {
+        "text": "Would you like to search for another?",
+        "type": "PlainText",
+      },
+    },
+    "shouldEndSession": false,
+  },
+  "version": "1.0",
+}
+`;
+
+exports[`Search intent with no results 1`] = `
+Object {
+  "response": Object {
+    "outputSpeech": Object {
+      "text": "I couldn't find any airports for foobar. Would you like to search for another?",
+      "type": "PlainText",
+    },
+    "reprompt": Object {
+      "outputSpeech": Object {
+        "text": "Which airport would you like to search for?",
+        "type": "PlainText",
+      },
+    },
+    "shouldEndSession": false,
+  },
+  "version": "1.0",
+}
+`;
+
+exports[`Search intent with single result 1`] = `
+Object {
+  "response": Object {
+    "card": Object {
+      "content": "The airport code for George Best Belfast City, United Kingdom is BHD",
+      "title": "Airport search for Belfast City Airport",
+      "type": "Simple",
+    },
+    "outputSpeech": Object {
+      "ssml": "<speak><s>The airport code for George Best Belfast City, United Kingdom is <say-as interpret-as=\\"characters\\">BHD</say-as></s><break time=\\"1s\\"/><s>Would you like to search for another?</s></speak>",
+      "type": "SSML",
+    },
+    "reprompt": Object {
+      "outputSpeech": Object {
+        "text": "Would you like to search for another?",
+        "type": "PlainText",
+      },
+    },
+    "shouldEndSession": false,
+  },
+  "version": "1.0",
+}
+`;
+
+exports[`Stop intent 1`] = `
+Object {
+  "response": Object {
+    "outputSpeech": Object {
+      "text": "Goodbye!",
+      "type": "PlainText",
+    },
+    "shouldEndSession": true,
+  },
+  "version": "1.0",
+}
+`;
+
+exports[`Yes intent 1`] = `
+Object {
+  "response": Object {
+    "outputSpeech": Object {
+      "text": "Which airport would you like to search for?",
+      "type": "PlainText",
+    },
+    "reprompt": Object {
+      "outputSpeech": Object {
+        "text": "Which airport would you like to search for?",
+        "type": "PlainText",
+      },
+    },
+    "shouldEndSession": false,
   },
   "version": "1.0",
 }
