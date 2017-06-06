@@ -8,21 +8,21 @@ export class App {
   @Launch
   launch() {
     return Response.build({
-      ask: 'Welcome to "Airport Search". Which airport would you like to search for?',
-      reprompt: 'Which airport would you like to search for?'
+      ask: 'Welcome to "Airport Search". Which city would you like to search for?',
+      reprompt: 'Which city would you like to search for?'
     });
   }
 
-  @Intent('App_Airport', 'App_US_CITY', 'App_EUROPE_CITY', 'App_GB_CITY', 'App_DE_CITY', 'App_COUNTRY', 'App_AT_CITY', 'Search')
-  search({ airport, us_city, europe_city, gb_city, de_city, country, at_city, query: querySlot }) {
-    const query = (airport || us_city || europe_city || gb_city || de_city || country || at_city || querySlot);
+  @Intent('App_US_CITY', 'App_EUROPE_CITY', 'App_GB_CITY', 'App_DE_CITY', 'App_COUNTRY', 'App_AT_CITY', 'Search')
+  search({ us_city, europe_city, gb_city, de_city, country, at_city, query: querySlot }) {
+    const query = (us_city || europe_city || gb_city || de_city || country || at_city || querySlot);
     return search(query).then((results) => {
       const count = results.length;
       switch(count) {
         case 0: {
           return Response.build({
             ask: `I couldn't find any airports for ${query}. Would you like to search for another?`,
-            reprompt: 'Which airport would you like to search for?'
+            reprompt: 'Which city would you like to search for?'
           });
         }
         case 1: {
@@ -72,16 +72,16 @@ export class App {
   @Intent('AMAZON.YesIntent')
   yes() {
     return Response.build({
-      ask: 'Which airport would you like to search for?',
-      reprompt: 'Which airport would you like to search for?'
+      ask: 'Which city would you like to search for?',
+      reprompt: 'Which city would you like to search for?'
     });
   }
 
   @Intent('AMAZON.HelpIntent')
   help() {
     return Response.build({
-      ask: 'The "Airport Code" skill finds details for airports world wide. Would you like to search for an airport?',
-      reprompt: 'Would you like to search for an airport?'
+      ask: 'The "Airport Search" skill finds details for airports world wide. Would you like to start a search?',
+      reprompt: 'Would you like to start an airport search?'
     });
   }
 

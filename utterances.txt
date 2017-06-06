@@ -1,28 +1,30 @@
-App_Airport What airports are in {airport}
-App_Airport Search for airports in {airport}
-App_Airport What is the airport code for {airport}
-App_Airport {airport}
-App_US_CITY What airports are in {us_city}
+App_US_CITY Find airports in {us_city}
 App_US_CITY Search for airports in {us_city}
-App_US_CITY What is the airport code for {us_city}
+App_US_CITY What airports are in {us_city}
+App_US_CITY What airports are there in {us_city}
 App_US_CITY {us_city}
-App_EUROPE_CITY What airports are in {europe_city}
-App_EUROPE_CITY Search for airports in {europe_city}
-App_EUROPE_CITY What is the airport code for {europe_city}
-App_EUROPE_CITY {europe_city}
-App_GB_CITY What airports are in {gb_city}
-App_GB_CITY Search for airports in {gb_city}
-App_GB_CITY What is the airport code for {gb_city}
-App_GB_CITY {gb_city}
-App_DE_CITY What airports are in {de_city}
-App_DE_CITY Search for airports in {de_city}
-App_DE_CITY What is the airport code for {de_city}
-App_DE_CITY {de_city}
-App_COUNTRY What airports are in {country}
-App_COUNTRY Search for airports in {country}
-App_COUNTRY What is the airport code for {country}
-App_COUNTRY {country}
-App_AT_CITY What airports are in {at_city}
+App_AT_CITY Find airports in {at_city}
 App_AT_CITY Search for airports in {at_city}
-App_AT_CITY What is the airport code for {at_city}
+App_AT_CITY What airports are in {at_city}
+App_AT_CITY What airports are there in {at_city}
 App_AT_CITY {at_city}
+App_COUNTRY Find airports in {country}
+App_COUNTRY Search for airports in {country}
+App_COUNTRY What airports are in {country}
+App_COUNTRY What airports are there in {country}
+App_COUNTRY {country}
+App_DE_CITY Find airports in {de_city}
+App_DE_CITY Search for airports in {de_city}
+App_DE_CITY What airports are in {de_city}
+App_DE_CITY What airports are there in {de_city}
+App_DE_CITY {de_city}
+App_EUROPE_CITY Find airports in {europe_city}
+App_EUROPE_CITY Search for airports in {europe_city}
+App_EUROPE_CITY What airports are in {europe_city}
+App_EUROPE_CITY What airports are there in {europe_city}
+App_EUROPE_CITY {europe_city}
+App_GB_CITY Find airports in {gb_city}
+App_GB_CITY Search for airports in {gb_city}
+App_GB_CITY What airports are in {gb_city}
+App_GB_CITY What airports are there in {gb_city}
+App_GB_CITY {gb_city}

@@ -6,12 +6,6 @@
     { "intent": "AMAZON.HelpIntent" },
     { "intent": "AMAZON.StopIntent" },
     {
-      "intent": "App_Airport",
-      "slots": [
-        { "name": "airport", "type": "AMAZON.Airport" }
-      ]
-    },
-    {
       "intent": "App_US_CITY",
       "slots": [
         { "name": "us_city", "type": "AMAZON.US_CITY" }

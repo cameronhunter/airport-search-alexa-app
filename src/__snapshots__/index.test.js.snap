@@ -17,12 +17,12 @@ exports[`Help intent 1`] = `
 Object {
   "response": Object {
     "outputSpeech": Object {
-      "text": "The \\"Airport Code\\" skill finds details for airports world wide. Would you like to search for an airport?",
+      "text": "The \\"Airport Search\\" skill finds details for airports world wide. Would you like to start a search?",
       "type": "PlainText",
     },
     "reprompt": Object {
       "outputSpeech": Object {
-        "text": "Would you like to search for an airport?",
+        "text": "Would you like to start an airport search?",
         "type": "PlainText",
       },
     },
@@ -36,12 +36,12 @@ exports[`Launch intent 1`] = `
 Object {
   "response": Object {
     "outputSpeech": Object {
-      "text": "Welcome to \\"Airport Search\\". Which airport would you like to search for?",
+      "text": "Welcome to \\"Airport Search\\". Which city would you like to search for?",
       "type": "PlainText",
     },
     "reprompt": Object {
       "outputSpeech": Object {
-        "text": "Which airport would you like to search for?",
+        "text": "Which city would you like to search for?",
         "type": "PlainText",
       },
     },
@@ -104,7 +104,7 @@ Object {
     },
     "reprompt": Object {
       "outputSpeech": Object {
-        "text": "Which airport would you like to search for?",
+        "text": "Which city would you like to search for?",
         "type": "PlainText",
       },
     },
@@ -155,12 +155,12 @@ exports[`Yes intent 1`] = `
 Object {
   "response": Object {
     "outputSpeech": Object {
-      "text": "Which airport would you like to search for?",
+      "text": "Which city would you like to search for?",
       "type": "PlainText",
     },
     "reprompt": Object {
       "outputSpeech": Object {
-        "text": "Which airport would you like to search for?",
+        "text": "Which city would you like to search for?",
         "type": "PlainText",
       },
     },
